@@ -1,0 +1,25 @@
+<!-- File: chapter1/basic-angularjs-app.html -->
+<!DOCTYPE html>
+<html >
+	<head>
+		<!-- <link rel="stylesheet"  type="text/css"  href="resources/css/style.css"/> -->
+	</head>
+	<body ng-app="EmpleadosModule" ng-controller="EmpleadosCtrl as ctrl">
+	
+		<h1>Empleados</h1>
+		<div ng-repeat="empleado in ctrl.empleados">
+			<div><span ng-bind="empleado.id"></span></div>
+			<div><span ng-bind="empleado.nombre"></span></div>
+			<div><span ng-bind="empleado.numId"></span></div>
+			<div><span ng-bind="empleado.salario"></span></div>
+			<div><span ng-bind="empleado.cargo"></span></div>
+		</div>
+
+		
+		<script src="./js/angular.js"></script>
+		<script src="./js/modules.js"></script>
+		<script src="./js/empleados/empleados_controller.js"></script>
+		
+	
+	</body>
+</html>
