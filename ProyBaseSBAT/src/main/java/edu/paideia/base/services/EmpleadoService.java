@@ -21,4 +21,24 @@ public class EmpleadoService {
 		return Lists.newArrayList(repository.findAll());
 	}
 
+	public boolean save(Empleado empleado) {
+		repository.save(empleado);
+		return true;
+	}
+
+	public boolean update(Empleado empleado) {
+		repository.save(empleado);
+		return true;
+	}
+
+	public boolean remove(Long id) {
+		repository.delete(id);
+		return true;
+	}
+
+	public Empleado find(String nombre) {
+		// TODO Auto-generated method stub
+		return repository.findByNombre(nombre).iterator().next();
+	}
+
 }

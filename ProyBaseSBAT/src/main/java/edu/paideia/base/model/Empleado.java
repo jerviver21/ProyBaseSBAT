@@ -64,5 +64,9 @@ public class Empleado {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+	
+	public String toString(){
+		return id+" - "+nombre+" - "+numId+" - "+salario+" - "+cargo;
+	}
 
 }

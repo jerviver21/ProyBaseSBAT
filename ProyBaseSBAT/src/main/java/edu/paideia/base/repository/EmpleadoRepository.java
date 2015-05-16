@@ -11,6 +11,6 @@ import edu.paideia.base.model.Empleado;
 
 @Repository
 public interface EmpleadoRepository extends CrudRepository<Empleado, Long>{
-	
+	public Collection<Empleado> findByNombre(String nombre);
 
 }

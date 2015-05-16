@@ -6,13 +6,91 @@
 	</head>
 	<body ng-app="EmpleadosModule" ng-controller="EmpleadosCtrl as ctrl">
 	
-		<h1>Empleados</h1>
+		<h4>Ingrese Datos Empleados</h4>
+		<div>
+			<form ng-submit="ctrl.guardarEmpleado()" name="form1">
+				<div>
+					<label for="nombre">Nombre</label>
+					<div>
+						<input name="nombre" type="text" ng-model="ctrl.empleado.nombre"  ng-minlength="4" required="true"/>
+					</div>
+					<!-- Validaciones campo nombre -->
+					<div  ng-show="form1.nombre.$dirty">
+						<span ng-show="form1.nombre.$error.required">
+							Valor Requerido.
+						</span>
+						<span ng-show="form1.nombre.$error.minlength">
+							Longitud minima de 4
+						</span>
+					</div>
+					<!-- *** -->
+				</div>
+				<br/>
+				<div>
+					<label for="num_id">Número de Identificación</label>
+					<div>
+						<input name="num_id" type="text" ng-model="ctrl.empleado.numId" ng-minlength="4" required="true"/>
+					</div>
+					<!-- Validaciones campo numId -->
+					<div  ng-show="form1.num_id.$dirty">
+						<span ng-show="form1.num_id.$error.required">
+							Valor Requerido.
+						</span>
+						<span ng-show="form1.num_id.$error.minlength">
+							Longitud minima de 4
+						</span>
+					</div>
+					<!-- *** -->
+				</div>
+				<br/>
+				<div>
+					<label for="salario">Salario</label>
+					<div>
+						<input name="salario" type="text" ng-model="ctrl.empleado.salario" required="true"/>
+					</div>
+					<!-- Validaciones campo salario -->
+					<div  ng-show="form1.salario.$dirty">
+						<span ng-show="form1.salario.$error.required">
+							Valor Requerido.
+						</span>
+					</div>
+					<!-- *** -->
+				</div>
+				<br/>
+				<div>
+					<label for="cargo">Cargo</label>
+					<div>
+						<input name="cargo" type="text" ng-model="ctrl.empleado.cargo" required="true"/>
+					</div>
+					<!-- Validaciones campo cargo -->
+					<div ng-show="form1.cargo.$dirty">
+						<span ng-show="form1.cargo.$error.required">
+							Valor Requerido.
+						</span>
+					</div>
+					<!-- *** -->
+				</div>
+				<br/><br/>
+				<div>
+					<div>
+						<input 	type="submit" value="Submit"/>
+					</div>
+				</div>
+			</form>
+		</div>
+		<span ng-show="ctrl.error" ng-bind="ctrl.error"/>
+		
+		
+	
+		<h3>Empleados</h3>
 		<div ng-repeat="empleado in ctrl.empleados">
 			<div><span ng-bind="empleado.id"></span></div>
 			<div><span ng-bind="empleado.nombre"></span></div>
 			<div><span ng-bind="empleado.numId"></span></div>
 			<div><span ng-bind="empleado.salario"></span></div>
 			<div><span ng-bind="empleado.cargo"></span></div>
+			<div><input type="button" ng-click="ctrl.consultarEmpleado(empleado.nombre)" value="Editar"/></div>
+			<div><input type="button" ng-click="ctrl.borrarEmpleado(empleado.id)" value="Borrar"/></div>
 		</div>
 
 		
