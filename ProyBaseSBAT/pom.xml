@@ -32,8 +32,7 @@
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.1-901-1.jdbc4</version>
-        </dependency>
-        
+        </dependency>    
         <!-- Utilities -->
         <dependency>
             <groupId>commons-lang</groupId>
@@ -45,8 +44,17 @@
             <artifactId>guava</artifactId>
             <version>10.0.1</version>
         </dependency>
- 
-        
+        <!-- Testing -->
+        <dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-core</artifactId>
+		    <scope>test</scope>
+		</dependency>
     </dependencies>
     
     <!-- Configura la versión de Java, el encoding y la clase inicial -->

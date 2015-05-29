@@ -15,30 +15,39 @@ import edu.paideia.base.repository.EmpleadoRepository;
 public class EmpleadoService {
 	
 	@Autowired
-	EmpleadoRepository repository;
+	private EmpleadoRepository repository;
 	
 	public Collection<Empleado> findAll(){
-		return Lists.newArrayList(repository.findAll());
+		return Lists.newArrayList(getRepository().findAll());
 	}
 
 	public boolean save(Empleado empleado) {
-		repository.save(empleado);
+		getRepository().save(empleado);
 		return true;
 	}
 
 	public boolean update(Empleado empleado) {
-		repository.save(empleado);
+		getRepository().save(empleado);
 		return true;
 	}
 
 	public boolean remove(Long id) {
-		repository.delete(id);
+		getRepository().delete(id);
 		return true;
 	}
 
 	public Empleado find(String nombre) {
 		// TODO Auto-generated method stub
-		return repository.findByNombre(nombre).iterator().next();
+		return getRepository().findByNombre(nombre).iterator().next();
+	}
+
+	
+	public EmpleadoRepository getRepository() {
+		return repository;
+	}
+
+	public void setRepository(EmpleadoRepository repository) {
+		this.repository = repository;
 	}
 
 }

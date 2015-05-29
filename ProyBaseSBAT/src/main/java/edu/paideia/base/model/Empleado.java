@@ -69,4 +69,19 @@ public class Empleado {
 		return id+" - "+nombre+" - "+numId+" - "+salario+" - "+cargo;
 	}
 
+	public boolean equals(Object obj){
+		if(obj instanceof Empleado){
+			Empleado e = (Empleado) obj;
+			if(e.getId() == null && this.getId() == null){
+				return true;
+			}
+			return this.getId().equals(e.getId());
+		}
+		return false;
+	}
+	
+	public int hashCode(){
+		return this.getId().hashCode();
+	}
+
 }
