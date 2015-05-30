@@ -1,6 +1,8 @@
 <!-- File: chapter1/basic-angularjs-app.html -->
 <!DOCTYPE html>
-<html >
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<head>
 		<link rel="stylesheet" href="./css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="./css/bootstrap-theme.min.css"/>
@@ -36,6 +38,11 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li>
+            <li>
+	            <form th:action="@{/logout}" method="post">
+			            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Out"/>
+			    </form>
+		    </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div> 
