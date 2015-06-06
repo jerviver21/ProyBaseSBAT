@@ -72,71 +72,88 @@
 				<form ng-submit="ctrl.guardarEmpleado()" name="form1" class="form-horizontal">
 					<div class="form-group">
 						<!-- Validaciones campo nombre -->
-						<div  ng-show="form1.nombre.$dirty"  class="alert alert-warning" role="alert">
-							<span ng-show="form1.nombre.$error.required">
-								Valor Requerido.
-							</span>
-							<span ng-show="form1.nombre.$error.minlength">
-								Longitud minima de 4
-							</span>
+						<div ng-show="form1.nombre.$dirty"> 
+							<div ng-show="form1.nombre.$error.required" class="alert alert-warning" role="alert">
+								<span >
+									Valor Requerido.
+								</span>
+							</div>
+							<div ng-show="form1.nombre.$error.minlength" class="alert alert-warning" role="alert">
+								<span >
+									Longitud minima de 4
+								</span>
+							</div>
 						</div>
 						<!-- *** -->
 
 						<div class="col-xs-5">
 							<input name="nombre" type="text" ng-model="ctrl.empleado.nombre"  
-								   ng-minlength="4" required="true"
+								   ng-minlength="4" ng-required="true"
 								   class="form-control " placeholder="Nombre" />
 						</div>
 					</div>
 					<div class="form-group">
 						<!-- Validaciones campo numId -->
-						<div  ng-show="form1.num_id.$dirty" class="alert alert-warning" role="alert">
-							<span ng-show="form1.num_id.$error.required">
-								Valor Requerido.
-							</span>
-							<span ng-show="form1.num_id.$error.minlength">
-								Longitud minima de 4
-							</span>
+						<div ng-show="form1.num_id.$dirty"> 
+							<div ng-show="form1.num_id.$error.required" class="alert alert-warning" role="alert">
+								<span >
+									Valor Requerido.
+								</span>
+							</div>
+							<div ng-show="form1.num_id.$error.minlength" class="alert alert-warning" role="alert">
+								<span >
+									Longitud minima de 4
+								</span>
+							</div>
 						</div>
 						<!-- *** -->
 						<div class="col-xs-5">
 							<input  name="num_id" type="text" ng-model="ctrl.empleado.numId" 
-									ng-minlength="4" required="true"
+									ng-minlength="4" ng-required="true"
 									class="form-control" placeholder="Numero Id" />
 						</div>						
 					</div>
 					<div class="form-group">
 						<!-- Validaciones campo salario -->
-						<div  ng-show="form1.salario.$dirty" class="alert alert-warning" role="alert">
-							<span ng-show="form1.salario.$error.required">
-								Valor Requerido.
-							</span>
+						<div ng-show="form1.salario.$dirty"> 
+							<div  ng-show="form1.salario.$error.required" class="alert alert-warning" role="alert">
+								<span>
+									Valor Requerido.
+								</span>
+							</div>
 						</div>
 						<!-- *** -->
 						<div class="col-xs-5">
-							<input  name="salario" type="text" ng-model="ctrl.empleado.salario" 
-									required="true"
+							<input  name="salario" type="number" ng-model="ctrl.empleado.salario" 
+									ng-required="true"
 									class="form-control" placeholder="Salario" />
 						</div>					
 					</div>
 					<div class="form-group">
 						<!-- Validaciones campo cargo -->
-						<div ng-show="form1.cargo.$dirty" class="alert alert-warning" role="alert">
-							<span ng-show="form1.cargo.$error.required">
-								Valor Requerido.
-							</span>
+						<div ng-show="form1.cargo.$dirty"> 
+							<div ng-show="form1.cargo.$error.required" class="alert alert-warning" role="alert">
+								<span >
+									Valor Requerido.
+								</span>
+							</div>
+							<div ng-show="form1.cargo.$invalid" class="alert alert-warning" role="alert">
+								<span>
+									Valor Invalido
+								</span>
+							</div>
 						</div>
 						<!-- *** -->
 						<div class="col-xs-5">
 							<input  name="cargo" type="text" ng-model="ctrl.empleado.cargo" 
-									required="true"
+									ng-required="true" ng-pattern="\d+"
 									class="form-control" placeholder="Cargo" />
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-xs-5">
-							<input 	type="submit" value="Submit" class="btn btn-success"/>
+							<input 	type="submit" value="Submit" class="btn btn-success" ng-disabled="form1.$invalid"/>
 						</div>
 					</div>
 				</form>

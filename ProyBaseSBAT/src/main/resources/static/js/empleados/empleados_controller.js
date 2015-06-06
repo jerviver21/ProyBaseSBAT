@@ -21,7 +21,7 @@ angular.module('EmpleadosModule')
 			.then(function(response) {
 				self.empleado = {};
 			}, function(errResponse) {
-				console.error('Error consultando el servicio ... ');
+				console.error('Error guardando... ');
 			});		
 			
 			self.consultarTodos();
