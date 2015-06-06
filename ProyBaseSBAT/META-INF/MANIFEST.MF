@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ProyBaseSBAT
+Bundle-SymbolicName: ProyBaseSBAT
+Bundle-Version: 1.0.0.qualifier
+Export-Package: edu.paideia.base,
+ edu.paideia.base.controllers,
+ edu.paideia.base.model,
+ edu.paideia.base.repository,
+ edu.paideia.base.services
