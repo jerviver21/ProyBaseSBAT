@@ -17,6 +17,7 @@ angular.module('EmpleadosModule')
 			EmpleadosService.guardarEmpleado(self.empleado)
 			.then(function(response) {
 				self.empleado = {};
+				self.consultarTodos();
 			}, function(errResponse) {
 				console.error('Error guardando... ');
 			});		
@@ -26,7 +27,7 @@ angular.module('EmpleadosModule')
 		self.borrarEmpleado = function(pk) {
 			EmpleadosService.borrarEmpleado(pk)
 			.then(function(response) {
-				console.log('empleado '+pk+' borrado con exito');
+				self.consultarTodos();
 			}, function(errResponse) {
 				console.error('Error consultando el servicio ... ');
 			});

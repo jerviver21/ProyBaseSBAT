@@ -11,8 +11,11 @@ module.exports = function(config) {
 			'angular.js',
 			'angular-mocks.js',
 			'modules.js',
+			'empleados/empleados_service.js',
+			'test/mocks/empleados_module_mocks.js',
 			'empleados/empleados_controller.js',
-			'test/empleados/empleados_controller_test.js'
+			'test/empleados/empleados_controller_test1.js',
+			'test/empleados/empleados_controller_test2.js'
 		],
 		// list of files / patterns to exclude
 		exclude: [],
