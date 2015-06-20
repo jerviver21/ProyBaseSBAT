@@ -1,5 +1,7 @@
 package edu.paideia.base.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +22,7 @@ public class Empleado {
 	private String numId;
 	private Double salario;
 	private String cargo;
+	private Date fechaCreacion;
 	
 	public Empleado(){
 		
@@ -82,6 +85,14 @@ public class Empleado {
 	
 	public int hashCode(){
 		return this.getId().hashCode();
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Date fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 
 }

@@ -1,6 +1,7 @@
 package edu.paideia.base.services;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,8 @@ public class EmpleadoService {
 	}
 
 	public boolean save(Empleado empleado) {
+		System.out.println("Se guarda la fecha de creación");
+		empleado.setFechaCreacion(new Date());
 		getRepository().save(empleado);
 		return true;
 	}

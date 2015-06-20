@@ -2,6 +2,8 @@ angular.module('EmpleadosModule')
 	.controller('EmpleadosCtrl', ['EmpleadosService', function(EmpleadosService) {
 		var self = this;
 		self.empleados = [];
+		self.sortOrder=['+nombre'];
+		self.filtro = {"object":{nombre:'Alexis'}};
 		
 		
 		self.consultarTodos = function() {

@@ -72,7 +72,7 @@
 				<form ng-submit="ctrl.guardarEmpleado()" name="form1" class="form-horizontal">
 					<div class="form-group">
 						<!-- Validaciones campo nombre -->
-						<div ng-show="form1.nombre.$dirty"> 
+						<div ng-show="form1.nombre.$dirty "> 
 							<div ng-show="form1.nombre.$error.required" class="alert alert-warning" role="alert">
 								<span >
 									Valor Requerido.
@@ -168,6 +168,10 @@
 		<div class="page-header">
 	        <h5>Resultados</h5>
 	    </div>
+
+		<div class="col-xs-5">
+	    	<input  name="buscar" type="text" ng-model="ctrl.filtro['object'].nombre" class="form-control" placeholder="Buscar x Nombre"/>
+		</div>
 	     
 		<table class="table">
 			<thead>
@@ -177,18 +181,20 @@
                     <th scope="col">Numero Id</th>
                     <th scope="col">Salario</th>
                     <th scope="col">Cargo</th>
+                    <th scope="col">Fecha Creación</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Borrar</th>
                 </tr>
             </thead>
 		
 			<tbody>
-				<tr ng-repeat="empleado in ctrl.empleados">
+				<tr ng-repeat="empleado in ctrl.empleados|filter:ctrl.filtro['object']|orderBy:ctrl.sortOrder">
 					<td><span ng-bind="empleado.id"></span></td>
 					<td><span ng-bind="empleado.nombre"></span></td>
-					<td><span ng-bind="empleado.numId"></span></td>
-					<td><span ng-bind="empleado.salario"></span></td>
+					<td><span>{{empleado.numId | number}}</span></td>
+					<td><span >{{empleado.salario | currency:'$ '}}</span></td>
 					<td><span ng-bind="empleado.cargo"></span></td>
+					<td><span>{{empleado.fechaCreacion | date:'yyyy-MM-dd'}}</span></td>
 					<td><input type="button" ng-click="ctrl.consultarEmpleado(empleado.nombre)" value="Editar" class="btn btn-success"/></td>
 					<td><input type="button" ng-click="ctrl.borrarEmpleado(empleado.id)" value="Borrar" class="btn btn-success"/></td>
 				</tr>

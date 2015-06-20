@@ -26,7 +26,7 @@ public class EmpleadoController {
 	
 	@RequestMapping(value="/empleados", method=RequestMethod.POST)
 	public boolean saveEmpleado(@RequestBody @Valid Empleado empleado){
-		System.out.println(empleado);
+		System.out.println(empleado+" Con fecha de creación");
 		return service.save(empleado);
 	}
 	
