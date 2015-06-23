@@ -1,0 +1,45 @@
+<!-- File: chapter10/routing-example/app/views/team_details.html -->
+<div class="container">
+
+	<div class="name">
+		<span ng-bind="ctrl.empleado.nombre"></span>
+	</div>
+	<div class="detail">
+		<div>
+			<br/>
+			<span>Numero de Id:</span>
+		</div>
+		<div class="title">
+			<span>{{ctrl.empleado.numId | number}}</span>
+		</div>
+	</div>
+	<div class="detail">
+		<div>
+			<br/>
+			<span>Cargo:</span>
+		</div>
+		<div class="title">
+			<span ng-bind="ctrl.empleado.cargo"></span>
+		</div>
+	</div>
+	<div class="detail">
+		<div>
+			<br/>
+			<span>Salario:</span>
+		</div>
+		<div class="title">
+			<span>
+				{{ctrl.empleado.salario | currency:'$ '}}
+			</span>
+		</div>
+	</div>
+	<div class="detail">
+		<div>
+			<br/>
+			<span>Fecha de Ingreso:</span>
+		</div>
+		<div class="title">
+			<span>{{ctrl.empleado.fechaCreacion | date:'yyyy-MM-dd'}}</span>
+		</div>
+	</div>
+</div>

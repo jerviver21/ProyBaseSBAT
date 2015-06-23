@@ -1,0 +1,32 @@
+<!-- File: emps/emp_listado.html -->
+<div class="container theme-showcase" role="main">
+
+
+	<table class="table">
+			<thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Numero Id</th>
+                    <th scope="col">Salario</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Fecha Creación</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+		
+			<tbody>
+				<tr ng-repeat="empleado in ctrl.empleados | orderBy: 'nombre'">
+					<td><span ng-bind="empleado.nombre"></span></td>
+					<td><span>{{empleado.numId | number}}</span></td>
+					<td><span >{{empleado.salario | currency:'$ '}}</span></td>
+					<td><span ng-bind="empleado.cargo"></span></td>
+					<td><span>{{empleado.fechaCreacion | date:'yyyy-MM-dd'}}</span></td>
+					<td><a ng-href="#/emp_detalle/{{empleado.nombre}}"
+						   ng-bind="empleado.nombre"
+						   style="color: cadetblue;"></a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+
+</div>
