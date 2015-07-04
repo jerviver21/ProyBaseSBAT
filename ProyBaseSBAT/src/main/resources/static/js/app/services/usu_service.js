@@ -1,4 +1,4 @@
-angular.module('RoutingModule')
+angular.module('ServiceModule')
 	.factory('UsuariosService', ['$http', function($http) {
 	
 	var service = {

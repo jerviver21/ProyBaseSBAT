@@ -1,4 +1,4 @@
-angular.module('EmpleadosModule')
+angular.module('Emp1Module')
 	.controller('EmpleadosCtrl', ['EmpleadosService', function(EmpleadosService) {
 		var self = this;
 		self.empleados = [];

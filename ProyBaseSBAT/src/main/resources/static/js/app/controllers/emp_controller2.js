@@ -1,4 +1,4 @@
-angular.module('RoutingModule')
+angular.module('Emp2Module')
 	.controller('MainCtrl', ['UsuariosService', function(UsuariosService) {
 		var self = this;
 		self.userService = UsuariosService;

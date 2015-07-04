@@ -1,5 +1,5 @@
 // File: chapter10/routing-example/app/scripts/app.js
-angular.module('RoutingModule', ['ngRoute'])
+angular.module('Emp2Module', ['ngRoute','ServiceModule'])
 	.config(function($routeProvider) {
 		
 		$routeProvider.when('/', {

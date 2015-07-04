@@ -1,4 +1,4 @@
-angular.module('EmpleadosModule')
+angular.module('ServiceModule')
 	.factory('EmpleadosService', ['$http', function($http) {
 	
 	var url = '/empleados';
