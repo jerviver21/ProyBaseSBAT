@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div ng-app="TabsModule">
+			<div ng-controller="TController as ctrl">
+				<tabs>
+					<tab title="Company">
+						{{ctrl.presentation}}
+					</tab>
+					<tab title="Results">
+						<h3>Lista de Candidatos</h3>
+						<div ng-repeat="c in ctrl.candidates">
+								-- {{c.logo}} -- {{c.name}} : {{c.value*100}} % 
+						</div>
+					</tab>
+				</tabs>
+			</div>
+		</div>		
+	
+		<script src="../js/jquery-1.9.1.min.js"></script>
+		<script src="../js/angular.js"></script>
+		<script src="../js/pangular/tabs/module.js"></script>
+		<script src="../js/pangular/tabs/directive.js"></script>
+		<script src="../js/pangular/tabs/controller.js"></script>
+
+	</body>
+</html>

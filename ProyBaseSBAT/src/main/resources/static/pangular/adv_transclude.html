@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div ng-app="AdvTranscludeModule">
+			<div ng-controller="TController as ctrl">
+				<h3>Lista de Candidatos</h3>
+				<div candidate-repeat="ctrl.candidates">
+					This is: {{c.name}} -- with  {{percentage}}  of aceptation  -- {{c.logo}} --
+				</div>
+			</div>
+		</div>		
+	
+		<script src="../js/jquery-1.9.1.min.js"></script>
+		<script src="../js/angular.js"></script>
+		<script src="../js/pangular/adv_transclusion/module.js"></script>
+		<script src="../js/pangular/adv_transclusion/directive.js"></script>
+		<script src="../js/pangular/adv_transclusion/controller.js"></script>
+
+	</body>
+</html>

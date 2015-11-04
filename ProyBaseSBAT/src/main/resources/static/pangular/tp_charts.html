@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Google Chart App</title>
+</head>
+<body ng-app="TpChartModule">
+	<div ng-controller="MainCtrl as mainCtrl">
+		<div>
+			<button ng-click="mainCtrl.changeData()">
+				Change Pie Chart Data
+			</button>
+		</div>
+		<div 	pie-chart
+				chart-data="mainCtrl.pieChartData"
+				chart-config="mainCtrl.pieChartConfig">
+		</div>
+	</div>
+
+	<script src="http://www.google.com/jsapi"></script>
+	<script src="http://code.angularjs.org/1.2.16/angular.js"></script>
+	<script src="../js/pangular/tp_charts/module.js"></script>
+	<script src="../js/pangular/tp_charts/service.js"></script>
+	<script src="../js/pangular/tp_charts/directive.js"></script>
+	<script src="../js/pangular/tp_charts/controller.js"></script>
+</body>
+</html>
